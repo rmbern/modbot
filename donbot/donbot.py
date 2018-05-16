@@ -210,8 +210,9 @@ class Donbot(object):
                 'addbbcode20':100, 'message':body, 'status_switch':0, 
                 'post':'Submit', 'attach_sig':'on',
                 'disable_smilies':'on'}
+
         for user in uids:
-            form['address_list[u][{}]'.format(user.value)] = 'to'
+            form['address_list[u][{}]'.format(user)] = 'to'
             
         for name in ['lastclick', 'creation_time', 'form_token']:
             form[name] = compose.xpath(postformpath.format(name))[0]
